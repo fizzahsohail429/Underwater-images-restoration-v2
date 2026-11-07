@@ -10,6 +10,7 @@ import sys
 
 import cv2
 import numpy as np
+import torch
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
@@ -21,12 +22,13 @@ from improved_underwater_restoration import (  # noqa: E402
     create_improved_transforms,
 )
 from quality_metrics import denormalize, psnr_per_image, ssim_per_image  # noqa: E402
+from dataset_catalog import UIEB_REFERENCE  # noqa: E402
 
 OUT = os.path.join(ROOT, "paper_records", "available_now")
 TEST_LIST = os.path.join(ROOT, "paper_records", "uieb_test.txt")
 N_IMAGES = 15
 REFERENCE_CANDIDATES = [
-    os.path.join(ROOT, "archive", "reference-890"),
+    UIEB_REFERENCE,
     os.path.join(ROOT, "archive", "UIEB", "reference-890"),
     os.path.join(ROOT, "archive", "UIEB", "reference"),
 ]
@@ -90,6 +92,26 @@ def main():
             "SSIM": f"{ssim:.6f}",
         })
         reference_path = find_reference(image_id)
+        raw_psnr = raw_ssim = ""
+        if reference_path:
+            reference_bgr = cv2.imread(reference_path, cv2.IMREAD_COLOR)
+            if reference_bgr.shape[:2] != raw_bgr.shape[:2]:
+                reference_bgr = cv2.resize(
+                    reference_bgr, (raw_bgr.shape[1], raw_bgr.shape[0]), interpolation=cv2.INTER_AREA
+                )
+            reference_rgb = cv2.cvtColor(reference_bgr, cv2.COLOR_BGR2RGB).astype(np.float32) / 255.0
+            raw_rgb = raw.astype(np.float32) / 255.0
+            raw_tensor = torch.from_numpy(np.transpose(raw_rgb, (2, 0, 1))).unsqueeze(0)
+            reference_tensor = torch.from_numpy(np.transpose(reference_rgb, (2, 0, 1))).unsqueeze(0)
+            raw_psnr = f"{psnr_per_image(raw_tensor, reference_tensor)[0]:.6f}"
+            raw_ssim = f"{ssim_per_image(raw_tensor, reference_tensor)[0]:.6f}"
+        reference_rows.append({
+            "image_id": image_id,
+            "dataset": "UIEB test",
+            "method": "unprocessed input",
+            "PSNR": raw_psnr,
+            "SSIM": raw_ssim,
+        })
         reference_rows.append({
             "image_id": image_id,
             "dataset": "UIEB test",

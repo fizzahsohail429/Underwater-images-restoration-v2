@@ -25,11 +25,13 @@ Fifteen UIEB test images were selected: `716_img_.png`, `341_img_.png`, `476_img
 
 ### Reference comparison
 
-`available_now/uieb_reference_metrics.csv` has one row per image with columns `image_id`, `dataset`, `method`, `PSNR`, `SSIM`. The method is E-URM. PSNR and SSIM are blank.
+The official reference-890 archive is extracted at `archive/reference-890` (890 files). Filenames match `archive/UIEB`.
 
-Panels are in `available_now/`. Each panel is original input, reference, and E-URM output. The reference panel says the reference is not on disk. The E-URM panel says no checkpoint has been saved. `contact_sheet.png` stacks the fifteen panels.
+`uieb_test_unprocessed_vs_reference.csv` has one row per test image and method, columns `image_id`, `dataset`, `method`, `PSNR`, `SSIM`. The unprocessed input is scored against the reference at full resolution. All 89 test images matched, with no resizing. Mean PSNR is 17.814 dB (95% interval 16.787 to 18.840) and mean SSIM is 0.781 (95% interval 0.754 to 0.807). E-URM rows are blank because `runs/uieb/checkpoint.pt` does not exist yet.
 
-No paired reference file was found for any of the fifteen images. `archive/UIEB` contains 890 raw images and no `reference-890` folder. EUVP `trainA` has 1,478 images and no reference folder. Aquarium has capture images and no enhancement reference.
+The ten-image panels in `uieb_workflow10/` show the input, the reference, and a blank E-URM slot. `716_img_.png` remains the difficult case (9.515 dB, 0.625 SSIM against its reference).
+
+EUVP `trainA` still has inputs only. Aquarium still has no enhancement reference.
 
 ### Synthetic degradation, kept separate
 
@@ -59,14 +61,14 @@ On these 15 images the unprocessed synthetic input has mean PSNR 13.117 dB and m
 
 Training of UIEB is still inside epoch 1 of 30. `runs/uieb/checkpoint.pt` and `runs/evaluated/checkpoint.pt` do not exist yet, so an E-URM image cannot be saved and E-URM PSNR/SSIM cannot be calculated. EUVP and aquarium training have not started. Transfer scores are not available.
 
-The following manuscript items cannot be filled from the files on disk:
+The unprocessed input versus reference-890 is already scored for all 89 test images. The following manuscript items still cannot be filled:
 
 - Paired PSNR and SSIM of E-URM against a UIEB reference image.
-- A visual panel that contains the real reference and a trained E-URM output.
+- A trained E-URM output in the comparison panel. The reference image is already in that panel.
 - UIQM and UCIQE on a trained output. The functions exist in `quality_metrics.py`, but they have not been run on a saved model.
 - Trained ablation checkpoints: capacity-matched control, no attention, no color, no degradation consistency, and no synthetic augmentation.
 - External baselines Water-Net, FUnIE-GAN, and PCAFA-Net. Their code and checkpoints are not in this folder.
-- Held-out transfer. The UODD folder is empty, and EUVP and aquarium have not been trained or scored with a finished checkpoint.
+- Held-out transfer. EUVP and aquarium have not been trained or scored with a finished checkpoint.
 - Numerical claims for the abstract, discussion, and conclusions. Those sentences need the trained test table first.
 
-When epoch 1 finishes, the same 15 images can be filled by loading `runs/uieb/checkpoint.pt`, writing the E-URM image into the third panel, and putting reference PSNR/SSIM into `uieb_reference_metrics.csv` only for images that have a reference file.
+When a selected checkpoint exists, the same test images can be filled by loading `runs/uieb/checkpoint.pt` and writing E-URM PSNR/SSIM only from that file. A mid-epoch `last.pt` is not that checkpoint.

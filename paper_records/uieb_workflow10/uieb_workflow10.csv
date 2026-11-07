@@ -1,21 +1,21 @@
 image_id,dataset,method,PSNR,SSIM
-716_img_.png,UIEB raw-890 test split,capacity-matched control (untrained initialization),,
-716_img_.png,UIEB raw-890 test split,E-URM (untrained initialization),,
-341_img_.png,UIEB raw-890 test split,capacity-matched control (untrained initialization),,
-341_img_.png,UIEB raw-890 test split,E-URM (untrained initialization),,
-476_img_.png,UIEB raw-890 test split,capacity-matched control (untrained initialization),,
-476_img_.png,UIEB raw-890 test split,E-URM (untrained initialization),,
-867_img_.png,UIEB raw-890 test split,capacity-matched control (untrained initialization),,
-867_img_.png,UIEB raw-890 test split,E-URM (untrained initialization),,
-680_img_.png,UIEB raw-890 test split,capacity-matched control (untrained initialization),,
-680_img_.png,UIEB raw-890 test split,E-URM (untrained initialization),,
-798_img_.png,UIEB raw-890 test split,capacity-matched control (untrained initialization),,
-798_img_.png,UIEB raw-890 test split,E-URM (untrained initialization),,
-893_img_.png,UIEB raw-890 test split,capacity-matched control (untrained initialization),,
-893_img_.png,UIEB raw-890 test split,E-URM (untrained initialization),,
-528_img_.png,UIEB raw-890 test split,capacity-matched control (untrained initialization),,
-528_img_.png,UIEB raw-890 test split,E-URM (untrained initialization),,
-689_img_.png,UIEB raw-890 test split,capacity-matched control (untrained initialization),,
-689_img_.png,UIEB raw-890 test split,E-URM (untrained initialization),,
-299_img_.png,UIEB raw-890 test split,capacity-matched control (untrained initialization),,
-299_img_.png,UIEB raw-890 test split,E-URM (untrained initialization),,
+716_img_.png,UIEB test,unprocessed input,9.514577,0.624807
+716_img_.png,UIEB test,E-URM,,
+341_img_.png,UIEB test,unprocessed input,18.082497,0.774466
+341_img_.png,UIEB test,E-URM,,
+476_img_.png,UIEB test,unprocessed input,16.370819,0.674880
+476_img_.png,UIEB test,E-URM,,
+867_img_.png,UIEB test,unprocessed input,13.306794,0.646362
+867_img_.png,UIEB test,E-URM,,
+680_img_.png,UIEB test,unprocessed input,21.231242,0.923963
+680_img_.png,UIEB test,E-URM,,
+798_img_.png,UIEB test,unprocessed input,18.760114,0.868707
+798_img_.png,UIEB test,E-URM,,
+893_img_.png,UIEB test,unprocessed input,10.760220,0.606159
+893_img_.png,UIEB test,E-URM,,
+528_img_.png,UIEB test,unprocessed input,10.591153,0.641039
+528_img_.png,UIEB test,E-URM,,
+689_img_.png,UIEB test,unprocessed input,12.302381,0.602939
+689_img_.png,UIEB test,E-URM,,
+299_img_.png,UIEB test,unprocessed input,25.839031,0.898879
+299_img_.png,UIEB test,E-URM,,

@@ -1,0 +1,8 @@
+Comparison: unprocessed archive/UIEB input versus archive/reference-890.
+Range [0, 1], PSNR peak 1. SSIM is Wang 2004, 11x11 Gaussian, sigma 1.5, valid convolution.
+This is not an E-URM score. E-URM rows in the CSV are blank because no checkpoint is selected yet.
+scored: 89 of 89 test images
+missing reference or raw: 0
+reference resized to the raw size: 0
+PSNR mean 17.813612, 95% interval [16.787185, 18.840040]
+SSIM mean 0.780628, 95% interval [0.754380, 0.806876]

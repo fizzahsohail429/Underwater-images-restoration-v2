@@ -1,0 +1,179 @@
+image_id,dataset,method,PSNR,SSIM
+716_img_.png,UIEB test,unprocessed input,9.514577,0.624807
+716_img_.png,UIEB test,E-URM,,
+341_img_.png,UIEB test,unprocessed input,18.082497,0.774466
+341_img_.png,UIEB test,E-URM,,
+476_img_.png,UIEB test,unprocessed input,16.370819,0.674880
+476_img_.png,UIEB test,E-URM,,
+867_img_.png,UIEB test,unprocessed input,13.306794,0.646362
+867_img_.png,UIEB test,E-URM,,
+680_img_.png,UIEB test,unprocessed input,21.231242,0.923963
+680_img_.png,UIEB test,E-URM,,
+798_img_.png,UIEB test,unprocessed input,18.760114,0.868707
+798_img_.png,UIEB test,E-URM,,
+893_img_.png,UIEB test,unprocessed input,10.760220,0.606159
+893_img_.png,UIEB test,E-URM,,
+528_img_.png,UIEB test,unprocessed input,10.591153,0.641039
+528_img_.png,UIEB test,E-URM,,
+689_img_.png,UIEB test,unprocessed input,12.302381,0.602939
+689_img_.png,UIEB test,E-URM,,
+299_img_.png,UIEB test,unprocessed input,25.839031,0.898879
+299_img_.png,UIEB test,E-URM,,
+789_img_.png,UIEB test,unprocessed input,14.414079,0.769631
+789_img_.png,UIEB test,E-URM,,
+67_img_.png,UIEB test,unprocessed input,23.983395,0.892868
+67_img_.png,UIEB test,E-URM,,
+730_img_.png,UIEB test,unprocessed input,25.383859,0.970546
+730_img_.png,UIEB test,E-URM,,
+613_img_.png,UIEB test,unprocessed input,17.076725,0.874144
+613_img_.png,UIEB test,E-URM,,
+674_img_.png,UIEB test,unprocessed input,21.567626,0.911829
+674_img_.png,UIEB test,E-URM,,
+696_img_.png,UIEB test,unprocessed input,23.008833,0.873106
+696_img_.png,UIEB test,E-URM,,
+305_img_.png,UIEB test,unprocessed input,21.375444,0.891025
+305_img_.png,UIEB test,E-URM,,
+80_img_.png,UIEB test,unprocessed input,14.808745,0.762054
+80_img_.png,UIEB test,E-URM,,
+773_img_.png,UIEB test,unprocessed input,20.502663,0.854181
+773_img_.png,UIEB test,E-URM,,
+221_img_.png,UIEB test,unprocessed input,17.711214,0.766705
+221_img_.png,UIEB test,E-URM,,
+150_img_.png,UIEB test,unprocessed input,15.992341,0.750757
+150_img_.png,UIEB test,E-URM,,
+12445.png,UIEB test,unprocessed input,16.900886,0.829143
+12445.png,UIEB test,E-URM,,
+679_img_.png,UIEB test,unprocessed input,21.546189,0.910049
+679_img_.png,UIEB test,E-URM,,
+355_img_.png,UIEB test,unprocessed input,17.222068,0.817184
+355_img_.png,UIEB test,E-URM,,
+433_img_.png,UIEB test,unprocessed input,14.030922,0.722485
+433_img_.png,UIEB test,E-URM,,
+895_img_.png,UIEB test,unprocessed input,13.323204,0.690813
+895_img_.png,UIEB test,E-URM,,
+569_img_.png,UIEB test,unprocessed input,19.652686,0.815135
+569_img_.png,UIEB test,E-URM,,
+18_img_.png,UIEB test,unprocessed input,9.396011,0.346018
+18_img_.png,UIEB test,E-URM,,
+12422.png,UIEB test,unprocessed input,13.230332,0.830660
+12422.png,UIEB test,E-URM,,
+255_img_.png,UIEB test,unprocessed input,26.633029,0.959980
+255_img_.png,UIEB test,E-URM,,
+802_img_.png,UIEB test,unprocessed input,23.699973,0.980887
+802_img_.png,UIEB test,E-URM,,
+633_img_.png,UIEB test,unprocessed input,14.464086,0.544930
+633_img_.png,UIEB test,E-URM,,
+201_img_.png,UIEB test,unprocessed input,25.769314,0.937745
+201_img_.png,UIEB test,E-URM,,
+458_img_.png,UIEB test,unprocessed input,17.843293,0.813498
+458_img_.png,UIEB test,E-URM,,
+423_img_.png,UIEB test,unprocessed input,15.914791,0.724026
+423_img_.png,UIEB test,E-URM,,
+2546.png,UIEB test,unprocessed input,20.972008,0.917331
+2546.png,UIEB test,E-URM,,
+659_img_.png,UIEB test,unprocessed input,13.223645,0.591588
+659_img_.png,UIEB test,E-URM,,
+904_img_.png,UIEB test,unprocessed input,19.778638,0.941984
+904_img_.png,UIEB test,E-URM,,
+105_img_.png,UIEB test,unprocessed input,12.487181,0.686327
+105_img_.png,UIEB test,E-URM,,
+77_img_.png,UIEB test,unprocessed input,17.422089,0.815646
+77_img_.png,UIEB test,E-URM,,
+559.png,UIEB test,unprocessed input,11.571455,0.670894
+559.png,UIEB test,E-URM,,
+9554.png,UIEB test,unprocessed input,17.502324,0.837915
+9554.png,UIEB test,E-URM,,
+729_img_.png,UIEB test,unprocessed input,35.049476,0.993150
+729_img_.png,UIEB test,E-URM,,
+370_img_.png,UIEB test,unprocessed input,22.071236,0.875400
+370_img_.png,UIEB test,E-URM,,
+753_img_.png,UIEB test,unprocessed input,19.420404,0.900173
+753_img_.png,UIEB test,E-URM,,
+634_img_.png,UIEB test,unprocessed input,15.321141,0.591599
+634_img_.png,UIEB test,E-URM,,
+19_img_.png,UIEB test,unprocessed input,15.725696,0.728600
+19_img_.png,UIEB test,E-URM,,
+841_img_.png,UIEB test,unprocessed input,14.125002,0.706918
+841_img_.png,UIEB test,E-URM,,
+253_img_.png,UIEB test,unprocessed input,17.347564,0.743869
+253_img_.png,UIEB test,E-URM,,
+6872.png,UIEB test,unprocessed input,10.501513,0.642844
+6872.png,UIEB test,E-URM,,
+758_img_.png,UIEB test,unprocessed input,24.246577,0.882678
+758_img_.png,UIEB test,E-URM,,
+715_img_.png,UIEB test,unprocessed input,12.690409,0.707328
+715_img_.png,UIEB test,E-URM,,
+858_img_.png,UIEB test,unprocessed input,19.604575,0.886280
+858_img_.png,UIEB test,E-URM,,
+8288.png,UIEB test,unprocessed input,8.797799,0.626883
+8288.png,UIEB test,E-URM,,
+506_img_.png,UIEB test,unprocessed input,23.781989,0.839035
+506_img_.png,UIEB test,E-URM,,
+600_img_.png,UIEB test,unprocessed input,13.522160,0.523403
+600_img_.png,UIEB test,E-URM,,
+391_img_.png,UIEB test,unprocessed input,13.771063,0.588210
+391_img_.png,UIEB test,E-URM,,
+340_img_.png,UIEB test,unprocessed input,18.474021,0.733686
+340_img_.png,UIEB test,E-URM,,
+851_img_.png,UIEB test,unprocessed input,20.528853,0.838287
+851_img_.png,UIEB test,E-URM,,
+377_img_.png,UIEB test,unprocessed input,18.992647,0.850043
+377_img_.png,UIEB test,E-URM,,
+278_img_.png,UIEB test,unprocessed input,29.628485,0.987264
+278_img_.png,UIEB test,E-URM,,
+169_img_.png,UIEB test,unprocessed input,13.282801,0.742405
+169_img_.png,UIEB test,E-URM,,
+313_img_.png,UIEB test,unprocessed input,17.984442,0.812288
+313_img_.png,UIEB test,E-URM,,
+318_img_.png,UIEB test,unprocessed input,15.669524,0.827210
+318_img_.png,UIEB test,E-URM,,
+539_img_.png,UIEB test,unprocessed input,16.916257,0.804461
+539_img_.png,UIEB test,E-URM,,
+345_img_.png,UIEB test,unprocessed input,29.681404,0.916777
+345_img_.png,UIEB test,E-URM,,
+277_img_.png,UIEB test,unprocessed input,20.773952,0.796963
+277_img_.png,UIEB test,E-URM,,
+682_img_.png,UIEB test,unprocessed input,21.443094,0.898890
+682_img_.png,UIEB test,E-URM,,
+502_img_.png,UIEB test,unprocessed input,20.921743,0.871956
+502_img_.png,UIEB test,E-URM,,
+137_img_.png,UIEB test,unprocessed input,13.860244,0.630376
+137_img_.png,UIEB test,E-URM,,
+56_img_.png,UIEB test,unprocessed input,17.549869,0.718304
+56_img_.png,UIEB test,E-URM,,
+330_img_.png,UIEB test,unprocessed input,26.097097,0.926489
+330_img_.png,UIEB test,E-URM,,
+905_img_.png,UIEB test,unprocessed input,11.868247,0.668988
+905_img_.png,UIEB test,E-URM,,
+272_img_.png,UIEB test,unprocessed input,16.118732,0.648592
+272_img_.png,UIEB test,E-URM,,
+116_img_.png,UIEB test,unprocessed input,17.990009,0.896259
+116_img_.png,UIEB test,E-URM,,
+493_img_.png,UIEB test,unprocessed input,16.700379,0.679963
+493_img_.png,UIEB test,E-URM,,
+9557.png,UIEB test,unprocessed input,15.880646,0.743789
+9557.png,UIEB test,E-URM,,
+917_img_.png,UIEB test,unprocessed input,19.036293,0.835027
+917_img_.png,UIEB test,E-URM,,
+856_img_.png,UIEB test,unprocessed input,17.541541,0.851054
+856_img_.png,UIEB test,E-URM,,
+2677.png,UIEB test,unprocessed input,14.698235,0.688033
+2677.png,UIEB test,E-URM,,
+59_img_.png,UIEB test,unprocessed input,21.255452,0.852745
+59_img_.png,UIEB test,E-URM,,
+91_img_.png,UIEB test,unprocessed input,14.942182,0.628029
+91_img_.png,UIEB test,E-URM,,
+185_img_.png,UIEB test,unprocessed input,17.873247,0.762833
+185_img_.png,UIEB test,E-URM,,
+7916.png,UIEB test,unprocessed input,12.494358,0.597337
+7916.png,UIEB test,E-URM,,
+55_img_.png,UIEB test,unprocessed input,18.528046,0.840960
+55_img_.png,UIEB test,E-URM,,
+428_img_.png,UIEB test,unprocessed input,19.451070,0.912500
+428_img_.png,UIEB test,E-URM,,
+25_img_.png,UIEB test,unprocessed input,17.373206,0.700379
+25_img_.png,UIEB test,E-URM,,
+102_img_.png,UIEB test,unprocessed input,14.356259,0.804552
+102_img_.png,UIEB test,E-URM,,
+495_img_.png,UIEB test,unprocessed input,16.354684,0.809760
+495_img_.png,UIEB test,E-URM,,
