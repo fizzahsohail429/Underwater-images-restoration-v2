@@ -1,0 +1,9 @@
+variant,checkpoint,parameters,resolution,batch_size,device,warmup_passes,timed_passes,latency_ms_per_batch_mean,latency_ms_per_image_mean,latency_ms_per_batch_min,latency_ms_per_batch_max,peak_memory_mib,peak_memory_definition
+e-urm,not trained; architecture only,73639032,256,6,cpu,1,2,7171.14,1195.19,7143.25,7199.03,1792.65,"peak process working set during the forward, including loaded weights"
+no-attention,not trained; architecture only,42199098,256,6,cpu,1,2,4053.81,675.63,3957.42,4150.19,1362.74,"peak process working set during the forward, including loaded weights"
+no-color,not trained; architecture only,73636225,256,6,cpu,1,2,6156.05,1026.01,6002.87,6309.24,1789.38,"peak process working set during the forward, including loaded weights"
+capacity-matched,not trained; architecture only,76747715,256,6,cpu,1,2,4397.24,732.87,4363.1,4431.39,1494.61,"peak process working set during the forward, including loaded weights"
+unprocessed input,none,0,256,6,cpu,0,0,,,,,,no network
+Water-Net,not in this repository,,256,6,cpu,,,,,,,,not measured; published checkpoint and code are not present
+FUnIE-GAN,not in this repository,,256,6,cpu,,,,,,,,not measured; published checkpoint and code are not present
+PCAFA-Net,not in this repository,,256,6,cpu,,,,,,,,not measured; published checkpoint and code are not present

@@ -1,0 +1,135 @@
+{
+  "source": "UIEB",
+  "raw_directory": "C:\\Users\\Lenovo\\OneDrive\\Documents\\phd work\\mash- work -underwater draft\\Underwater-Image-Enhanncement-and-Restoration-main\\archive\\raw-890",
+  "reference_directory": "C:\\Users\\Lenovo\\OneDrive\\Documents\\phd work\\mash- work -underwater draft\\Underwater-Image-Enhanncement-and-Restoration-main\\archive\\reference-890",
+  "reference_directory_present": false,
+  "reference_image_count": 0,
+  "split_seed": 2026,
+  "split_ratios": {
+    "train": 0.8,
+    "validation": 0.1,
+    "test": 0.1
+  },
+  "partition_unit": "one still image; raw-890 filenames are not video sequence ids",
+  "method": "SHA-256 of raw-890 file bytes after a single assignment to train, validation, or test",
+  "images_hashed": 890,
+  "duplicate_groups": 0,
+  "cross_split_duplicate_groups": 0,
+  "cross_split_duplicates": [],
+  "capture_ids_in_more_than_one_split": [
+    {
+      "sequence_id": "IMG_8496",
+      "splits": [
+        "train",
+        "valid"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8497",
+      "splits": [
+        "train",
+        "valid",
+        "test"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8512",
+      "splits": [
+        "train",
+        "valid"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8535",
+      "splits": [
+        "train",
+        "valid"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8551",
+      "splits": [
+        "train",
+        "valid"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8571",
+      "splits": [
+        "train",
+        "valid"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8572",
+      "splits": [
+        "train",
+        "valid"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8578",
+      "splits": [
+        "train",
+        "valid"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8581",
+      "splits": [
+        "train",
+        "valid"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8582",
+      "splits": [
+        "train",
+        "valid",
+        "test"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8590",
+      "splits": [
+        "train",
+        "valid",
+        "test"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8591",
+      "splits": [
+        "train",
+        "valid"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8593",
+      "splits": [
+        "train",
+        "valid"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8595",
+      "splits": [
+        "train",
+        "valid",
+        "test"
+      ]
+    },
+    {
+      "sequence_id": "IMG_8599",
+      "splits": [
+        "train",
+        "valid",
+        "test"
+      ]
+    }
+  ],
+  "current_comparison": "UIEB archive/raw-890 only",
+  "held_out_real_source": "UODD is the held-out no-reference source. Its prepared folder has no images yet. EUVP_paired, UIEB reference-890, and UIEB challenge-60 are also empty. Aquarium captures are readable and are excluded from the UIEB comparison.",
+  "challenge_directory": "C:\\Users\\Lenovo\\OneDrive\\Documents\\phd work\\mash- work -underwater draft\\Underwater-Image-Enhanncement-and-Restoration-main\\archive\\challenge-60",
+  "aquarium_directory": "C:\\Users\\Lenovo\\OneDrive\\Documents\\phd work\\Underwater Image Codes\\underwater_dataset1\\aquarium_pretrain"
+}

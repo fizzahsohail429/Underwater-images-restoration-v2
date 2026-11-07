@@ -1,0 +1,9 @@
+% LaTeX-ready contributions section for the 2025 paper
+\section{Contributions}
+We propose \textbf{NextGen2025}, a dual-stage underwater image restoration model tailored for blurred and dark conditions. Our main contributions are:
+\begin{enumerate}
+  \item \textbf{Physics-guided coarse recovery.} A first stage explicitly estimates per-pixel transmission and ambient light, enabling image formation-based recovery to a physically plausible coarse result.
+  \item \textbf{Data-driven refinement.} A UNet refiner takes the concatenation of the input and coarse images to correct color casts, enhance contrast, and suppress residual blur/artifacts.
+  \item \textbf{Stabilizing auxiliary supervision.} We supervise Stage~1 outputs to improve training stability and encourage physically meaningful intermediates, which boosts generalization across water types.
+  \item \textbf{Perceptual quality evaluation.} Beyond PSNR/SSIM, we include UIQM and UCIQE for quality aligned with underwater human perception.
+\end{enumerate}

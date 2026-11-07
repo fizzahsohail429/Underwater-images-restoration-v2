@@ -1,0 +1,15 @@
+source,reference_type,split,directory,directory_present,image_count,paired_count,sequence_count,role,in_current_comparison
+UIEB raw-890,raw underwater image,train,archive\raw-890,True,712,0,712,"current comparison; still-image partition, seed 2026, ratios 0.8/0.1/0.1",True
+UIEB raw-890,raw underwater image,validation,archive\raw-890,True,89,0,89,"current comparison; still-image partition, seed 2026, ratios 0.8/0.1/0.1",True
+UIEB raw-890,raw underwater image,test,archive\raw-890,True,89,0,89,"current comparison; still-image partition, seed 2026, ratios 0.8/0.1/0.1",True
+UIEB reference-890,perceptual reference,unsplit,archive\reference-890,False,0,0,0,paired target for raw-890 when the files are present,False
+UIEB challenge-60,no satisfactory reference,unsplit,archive\challenge-60,False,0,0,0,visual and no-reference assessment when the files are present,False
+UIEB_paired,paired perceptual reference,unsplit,Underwater-Image-Enhanncement-and-Restoration-main\datasets\UIEB_paired,True,0,0,0,prepared UIEB pairs,False
+EUVP_paired,paired reference,unsplit,Underwater-Image-Enhanncement-and-Restoration-main\datasets\EUVP_paired,True,0,0,0,"EUVP paired subset, kept separate from UIEB",False
+UODD_noref,no reference,unsplit,Underwater-Image-Enhanncement-and-Restoration-main\datasets\UODD_noref,True,0,0,0,held-out no-reference source,False
+UTDAC2020_noref,no reference,unsplit,Underwater-Image-Enhanncement-and-Restoration-main\datasets\UTDAC2020_noref,False,0,0,0,supported no-reference source,False
+RUOD_noref,no reference,unsplit,Underwater-Image-Enhanncement-and-Restoration-main\datasets\RUOD_noref,False,0,0,0,supported no-reference source,False
+UDD_noref,no reference,unsplit,Underwater-Image-Enhanncement-and-Restoration-main\datasets\UDD_noref,False,0,0,0,supported no-reference source,False
+aquarium,"capture image, no enhancement reference",train,..\..\Underwater Image Codes\underwater_dataset1\aquarium_pretrain\train\images,True,448,0,448,readable extra source; excluded from the UIEB comparison,False
+aquarium,"capture image, no enhancement reference",valid,..\..\Underwater Image Codes\underwater_dataset1\aquarium_pretrain\valid\images,True,127,0,127,readable extra source; excluded from the UIEB comparison,False
+aquarium,"capture image, no enhancement reference",test,..\..\Underwater Image Codes\underwater_dataset1\aquarium_pretrain\test\images,True,63,0,63,readable extra source; excluded from the UIEB comparison,False

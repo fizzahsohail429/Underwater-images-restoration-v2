@@ -1,0 +1,199 @@
+{
+  "table2": {
+    "framework": "PyTorch",
+    "environment": {
+      "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+      "platform": "Windows-10-10.0.26300-SP0",
+      "packages": {
+        "torch": "2.7.1",
+        "torchvision": "0.22.1",
+        "numpy": "2.2.6",
+        "opencv-python": "4.12.0.88",
+        "albumentations": "2.0.8",
+        "pillow": "11.3.0",
+        "matplotlib": "3.10.3"
+      }
+    },
+    "device": "CUDA if available, otherwise CPU",
+    "device_used": "cpu",
+    "cuda_available": false,
+    "input_resolution": [
+      256,
+      256
+    ],
+    "batch_size": 6,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "scheduler": {
+      "name": "ReduceLROnPlateau",
+      "mode": "min",
+      "factor": 0.5,
+      "patience": 5
+    },
+    "epochs_configured": 30
+  },
+  "loss_weights": {
+    "l1": 0.4,
+    "mse": 0.3,
+    "sobel": 0.2,
+    "degradation_consistency": 0.1
+  },
+  "normalization": {
+    "mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "max_pixel_value": 255.0,
+    "formula": "(u/255 - 0.5) / 0.5",
+    "tensor_range": [
+      -1.0,
+      1.0
+    ]
+  },
+  "history_keys_initialized": [
+    "train_loss",
+    "val_loss",
+    "train_l1",
+    "train_mse",
+    "train_edge",
+    "train_physics",
+    "val_l1",
+    "val_mse",
+    "val_edge",
+    "val_physics"
+  ],
+  "history_keys_appended": [
+    "train_loss",
+    "val_loss",
+    "train_l1",
+    "train_mse",
+    "train_edge",
+    "train_physics",
+    "val_l1",
+    "val_mse",
+    "val_edge",
+    "val_physics"
+  ],
+  "synthetic_degradation": {
+    "order": "Split the original images first. Draw a synthetic input only from an image already assigned to one split.",
+    "depth_factor": {
+      "distribution": "uniform",
+      "low": 0.3,
+      "high": 0.8
+    },
+    "attenuation": {
+      "form": "exp(-depth_factor * rate)",
+      "rates": {
+        "R": 2.0,
+        "G": 1.5,
+        "B": 0.8
+      }
+    },
+    "gaussian_scatter": {
+      "distribution": "normal",
+      "mean": 0.0,
+      "std": {
+        "distribution": "uniform",
+        "low": 0.1,
+        "high": 0.3
+      }
+    },
+    "blur": {
+      "type": "gaussian",
+      "kernel": "odd integer in {3, 5, 7, 9}",
+      "sigma": "OpenCV default for the selected kernel"
+    },
+    "intensity_noise": {
+      "distribution": "normal",
+      "mean": 0.0,
+      "sigma": {
+        "distribution": "uniform",
+        "low": 0.02,
+        "high": 0.08
+      },
+      "form": "sample * image"
+    }
+  },
+  "transforms_train_only": [
+    {
+      "name": "HorizontalFlip",
+      "p": 0.5
+    },
+    {
+      "name": "VerticalFlip",
+      "p": 0.3
+    },
+    {
+      "name": "RandomRotate90",
+      "p": 0.5
+    },
+    {
+      "name": "ColorJitter",
+      "brightness": 0.2,
+      "contrast": 0.2,
+      "saturation": 0.2,
+      "hue": 0.1,
+      "p": 0.7
+    },
+    {
+      "name": "RandomBrightnessContrast",
+      "p": 0.5
+    },
+    {
+      "name": "GaussNoise",
+      "var_limit": [
+        10.0,
+        50.0
+      ],
+      "p": 0.3
+    },
+    {
+      "name": "GaussianBlur",
+      "blur_limit": [
+        3,
+        7
+      ],
+      "p": 0.2
+    }
+  ],
+  "transforms_all_splits": [
+    "Resize to the configured input resolution",
+    "Normalize with mean 0.5 and std 0.5"
+  ],
+  "synthetic_degradation_splits": "train, validation, and test, each drawn after that image's split assignment",
+  "validation_and_test_degradation": "fixed by SHA-256 of the filename so the saved input does not change between epochs",
+  "seed": 2026,
+  "seed_covers": [
+    "random",
+    "numpy",
+    "torch",
+    "torch.cuda if available"
+  ],
+  "checkpoint_rule": "Save the epoch whose mean validation loss is the lowest so far.",
+  "checkpoint_path": "runs/evaluated/checkpoint.pt",
+  "checkpoint_present": false,
+  "repository": {
+    "repository": "https://github.com/fizzahsohail429/Underwater-Image-Enhanncement-and-Restoration",
+    "remote_branch": "main",
+    "remote_commit": "d219b49c81b9eb03932c9174c9f0be9695e8e737",
+    "remote_date": "2025-08-07T16:20:53Z",
+    "local_git": false,
+    "evaluated_revision": "Local working tree. The decoder-width fix and these records are not identified by a git commit in this folder, so they are not the remote commit above."
+  },
+  "hardware": {
+    "platform": "Windows-10-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "torch": "2.7.1+cpu",
+    "torch_threads": 10,
+    "cuda": false,
+    "gpu": null
+  }
+}

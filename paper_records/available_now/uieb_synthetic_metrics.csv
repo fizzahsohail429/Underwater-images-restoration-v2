@@ -1,0 +1,16 @@
+image_id,dataset,method,evaluation,PSNR,SSIM
+716_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,16.511335,0.540989
+341_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,13.465453,0.338139
+476_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,13.008631,0.493289
+867_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,15.535563,0.636505
+680_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,9.495762,0.29334
+798_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,15.050778,0.395928
+893_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,10.365302,0.304319
+528_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,13.730219,0.514961
+689_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,14.57905,0.486002
+299_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,10.814965,0.195661
+789_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,14.425776,0.341881
+67_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,11.595799,0.368877
+730_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,13.496026,0.466061
+613_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,9.78015,0.102637
+674_img_.png,UIEB test,unprocessed synthetic input,synthetic degradation; target is the original image,14.905176,0.585531

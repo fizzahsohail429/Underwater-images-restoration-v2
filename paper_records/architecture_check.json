@@ -1,0 +1,22 @@
+{
+  "parameters": 73639032,
+  "input": [
+    2,
+    3,
+    256,
+    256
+  ],
+  "output": [
+    2,
+    3,
+    256,
+    256
+  ],
+  "decoder4_in": 1024,
+  "decoder4_out": 512,
+  "decoder3_in": 1024,
+  "decoder2_in": 512,
+  "decoder1_in": 256,
+  "rgb_head_in": 128,
+  "forward_and_backward": "passed"
+}
