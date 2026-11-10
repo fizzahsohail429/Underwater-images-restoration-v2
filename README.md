@@ -32,8 +32,8 @@ The model uses a combined loss function:
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd underwater-image-restoration
+git clone https://github.com/fizzahsohail429/Underwater-images-restoration-v2.git
+cd Underwater-images-restoration-v2
 ```
 
 2. Install dependencies:
@@ -43,34 +43,45 @@ pip install -r requirements.txt
 
 ## Dataset Structure
 
-The model expects the following dataset structure:
+The UIEB experiment uses paired raw images and reference images. Pairing is by filename stem. The image folders are kept locally and are not part of this Git repository.
+
 ```
-aquarium_pretrain/
-├── train/
-│   └── images/
-├── valid/
-│   └── images/
-└── test/
-    └── images/
+archive/
+├── UIEB/              # 890 raw underwater images (model input)
+└── reference-890/     # 890 reference images (training target)
+
+paper_records/
+├── uieb_train.txt         # 712 image ids
+├── uieb_validation.txt    # 89 image ids
+└── uieb_test.txt          # 89 image ids
 ```
+
+The split is locked with seed 2026 at ratios 0.8 / 0.1 / 0.1. The test list is not used for training or checkpoint selection.
 
 ## Usage
 
-### Training the Model
+### Training on UIEB
 
-1. Place your underwater images in the appropriate directories
-2. Run the training script:
+Place the raw images in `archive/UIEB` and the matching reference images in `archive/reference-890`, then run:
+
 ```bash
-python underwater_image_restoration.py
+python train_uieb_reference.py --phase train --learning-rate 0.0001
+```
+
+Score the held-out test list once, using the checkpoint with the highest validation PSNR:
+
+```bash
+python train_uieb_reference.py --phase test --learning-rate 0.0001
 ```
 
 ### Training Parameters
 
 - **Image Size**: 256x256 pixels
-- **Batch Size**: 8
-- **Learning Rate**: 0.001
-- **Epochs**: 30 (configurable)
-- **Loss Weights**: L1 (0.7), MSE (0.3), Perceptual (0.2)
+- **Batch Size**: 6
+- **Learning Rate**: 0.0001 (0.001 produced non-finite gradients on this task)
+- **Epochs**: 30
+- **Loss Weights**: L1 (0.4), MSE (0.3), Sobel (0.2), degradation consistency (0.0 on this UIEB reference task)
+- **Checkpoint**: highest mean validation PSNR
 
 ### Model Outputs
 
