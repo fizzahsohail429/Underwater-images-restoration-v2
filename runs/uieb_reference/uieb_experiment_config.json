@@ -1,0 +1,38 @@
+{
+  "dataset": "UIEB",
+  "input": "archive/UIEB raw image",
+  "target": "archive/reference-890 same filename stem",
+  "synthetic_degradation": false,
+  "photometric_augmentation": false,
+  "geometric_augmentation": false,
+  "resize": "OpenCV/Albumentations resize to 256x256, evaluation uses the same paired resize",
+  "normalization": "(pixel/255 - 0.5) / 0.5",
+  "output": "denormalize tanh to [0, 1] before PSNR and SSIM",
+  "resolution": [
+    256,
+    256
+  ],
+  "color": "RGB",
+  "batch_size": 6,
+  "epochs": 30,
+  "optimizer": "AdamW",
+  "learning_rate": 0.0001,
+  "manuscript_learning_rate": 0.001,
+  "learning_rate_reason": "0.001 made decoder4.0 grow from 2.5 to 671 by epoch 1 batch 15 and made every value in initial_conv.0.weight's gradient non-finite. The rate below is the stability correction.",
+  "weight_decay": 0.0001,
+  "scheduler": "ReduceLROnPlateau mode=max factor=0.5 patience=5, stepped on validation PSNR",
+  "loss": {
+    "l1": 0.4,
+    "mse": 0.3,
+    "sobel": 0.2,
+    "degradation_consistency": 0.0,
+    "reason_delta_zero": "The consistency term compares a tinted blur of the output with the raw input. It is not a reference-890 loss, so it is off for this claim."
+  },
+  "gradient_clipping": null,
+  "seed": 2026,
+  "checkpoint_rule": "Highest mean validation PSNR. Validation SSIM is saved separately and is not used to choose the tested checkpoint.",
+  "test_images_used_for_selection": false,
+  "device": "cpu",
+  "git_revision": "2bc0bf573c080f45557996c22fcee6898f11aafb",
+  "started": "2026-11-09T20:02:09"
+}
