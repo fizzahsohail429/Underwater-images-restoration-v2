@@ -1,0 +1,31 @@
+{
+  "counts": {
+    "train": 712,
+    "validation": 89,
+    "test": 89
+  },
+  "unique_filenames": 890,
+  "filename_overlap": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "pairs_checked": 890,
+  "missing_or_unmatched_pairs": [],
+  "exact_duplicate_raw_groups": [],
+  "exact_duplicate_reference_groups": [],
+  "exact_duplicate_raw_groups_across_splits": [],
+  "scene_grouping": "Filenames do not contain a scene or sequence identifier, so grouped resampling was not applied.",
+  "external_sources": {
+    "challenge-60": {
+      "present": false
+    },
+    "EUVP_paired": {
+      "present": true,
+      "image_count": 1478,
+      "reference_folder_present": false
+    }
+  },
+  "selected_checkpoint_sha256": "176c0673f6fa3d4d0ae03ff7ce7537109185cfba418b79fbc9f63675719220c9",
+  "selected_checkpoint": "runs/uieb_reference/checkpoints/best_val_psnr.pt"
+}

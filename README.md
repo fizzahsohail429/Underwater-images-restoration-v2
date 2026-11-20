@@ -83,6 +83,33 @@ python train_uieb_reference.py --phase test --learning-rate 0.0001
 - **Loss Weights**: L1 (0.4), MSE (0.3), Sobel (0.2), degradation consistency (0.0 on this UIEB reference task)
 - **Checkpoint**: highest mean validation PSNR
 
+## Preprocessing and PSNR/SSIM
+
+These settings are the ones used by `train_uieb_reference.py` for training, validation, and the held-out test. The architecture check uses the same 256×256 RGB input size. Validation PSNR in the training log and PSNR/SSIM in the test table are computed by the same functions in `paper_records/quality_metrics.py`.
+
+### Preprocessing
+
+- Read with OpenCV, then convert BGR to RGB.
+- Resize the raw input and the reference together to 256×256. Both images go through one Albumentations `Resize`, so they receive the same interpolation. The call does not override the default, which is OpenCV `INTER_LINEAR`.
+- No crop, flip, rotation, color jitter, noise, blur, or synthetic degradation on this UIEB run. The training, validation, and test loaders all use the validation transform.
+- Normalize each channel with mean 0.5 and standard deviation 0.5. With Albumentations `max_pixel_value=255`, this is `(pixel / 255 - 0.5) / 0.5`. Network inputs are in `[-1, 1]`.
+- Before a metric, map a tensor back with `clamp(x * 0.5 + 0.5, 0, 1)`. The unprocessed input, the E-URM output, and the reference are all mapped this way.
+
+### PSNR
+
+- Compare one image with the resized reference. The data range is `[0, 1]` and the peak is 1.
+- Mean squared error is over every pixel and all three channels.
+- `PSNR = 10 * log10(1 / MSE)`. If MSE is at most `1e-12`, the score is recorded as 99.
+- The unprocessed input and E-URM are each scored against that same reference.
+
+### SSIM
+
+- Wang et al. (2004), with `K1 = 0.01` and `K2 = 0.03`, so `C1 = 0.0001` and `C2 = 0.0009` at peak 1.
+- 11×11 Gaussian window, sigma 1.5, normalized so the window sums to 1.
+- Valid convolution: no padding, so the map is 246×246 for a 256×256 image.
+- SSIM is computed on each RGB channel, then the three channel scores are averaged.
+- The unprocessed input and E-URM use this same window and the same resized reference.
+
 ### Model Outputs
 
 The training process generates:

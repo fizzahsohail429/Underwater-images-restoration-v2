@@ -28,6 +28,7 @@ from improved_underwater_restoration import (  # noqa: E402
     EVALUATED_SETTINGS,
     HybridEncoderDecoder,
     PhysicsInformedLoss,
+    build_paper_variant,
     create_improved_transforms,
     save_checkpoint,
     set_reproducibility_seed,
@@ -241,9 +242,9 @@ def make_loaders(splits, pairs, batch_size):
     return train_loader, val_loader, test_loader
 
 
-def build_model(device, learning_rate):
-    model = HybridEncoderDecoder().to(device)
-    criterion = PhysicsInformedLoss(alpha=0.4, beta=0.3, gamma=0.2, delta=0.0)
+def build_model(device, learning_rate, architecture="e-urm", consistency_weight=0.0):
+    model = build_paper_variant(architecture).to(device)
+    criterion = PhysicsInformedLoss(alpha=0.4, beta=0.3, gamma=0.2, delta=consistency_weight)
     optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=0.0001)
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
         optimizer, mode="max", factor=0.5, patience=5
