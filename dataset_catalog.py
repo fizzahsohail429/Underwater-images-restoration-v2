@@ -1,8 +1,8 @@
 """Sources named by the manuscript and by the dataset preparation scripts.
 
-Every source is readable through this module. The current visual comparison uses
-only UIEB archive/raw-890. Other folders are counted even when they contain no
-images, and they are not copied into that comparison.
+The reported UIEB experiment reads archive/UIEB as the input and
+archive/reference-890 as the target. Other folders are counted even when they
+contain no images.
 """
 
 import os
@@ -69,22 +69,22 @@ def source_rows():
     rows.append({
         "source": "UIEB raw-890",
         "reference_type": "raw underwater image",
-        "role": "current training source and the only visual comparison",
+        "role": "raw input for the reference-890 experiment",
         "directory": UIEB_RAW,
         "directory_present": os.path.isdir(UIEB_RAW),
         "image_count": raw_count,
-        "paired_count": 0,
+        "paired_count": reference_count,
         "in_current_comparison": True,
     })
     rows.append({
         "source": "UIEB reference-890",
         "reference_type": "perceptual reference",
-        "role": "paired target for raw-890 when the files are present",
+        "role": "training and test target, paired by filename stem",
         "directory": UIEB_REFERENCE,
         "directory_present": os.path.isdir(UIEB_REFERENCE),
         "image_count": reference_count,
         "paired_count": reference_count,
-        "in_current_comparison": False,
+        "in_current_comparison": True,
     })
     rows.append({
         "source": "UIEB challenge-60",

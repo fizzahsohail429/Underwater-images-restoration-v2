@@ -1,56 +1,55 @@
-% Paste-ready tables. Counts and quality scores that were not measured are left blank.
+% Paste-ready tables for the completed UIEB reference-890 experiment.
+% Counts and scores below were measured. Water-Net, FUnIE-GAN, and PCAFA-Net were not measured.
 
 \begin{table}[ht]
-\caption{Sample counts read from disk. The current visual comparison uses only UIEB \texttt{archive/raw-890}, partitioned once with seed 2026 and ratios 0.8/0.1/0.1 (712/89/89). SHA-256 comparison of those 890 files found no duplicate across splits. \texttt{reference-890}, the 60-image challenge subset, the prepared UIEB and EUVP pair folders, and UODD contain no images. Aquarium captures are readable (448/127/63) and are excluded from the UIEB comparison; 15 capture ids occur in more than one aquarium split.}
+\caption{Sample counts for the reported experiment. \texttt{archive/UIEB} and \texttt{archive/reference-890} each contain 890 images, paired by filename stem and locked with seed 2026 at ratios 0.8/0.1/0.1. The pair audit found no missing pair, no filename overlap, and no exact duplicate. Challenge-60 has 60 images and no reference. The local EUVP folder has 1478 raw images and no reference folder.}
 \begin{tabular}{llrr}
 \hline
-Source & Reference type & Split & Images \\
+Source & Role & Split & Images \\
 \hline
-UIEB raw-890 & Raw underwater image & Train & 712 \\
-UIEB raw-890 & Raw underwater image & Validation & 89 \\
-UIEB raw-890 & Raw underwater image & Test & 89 \\
-UIEB reference-890 & Perceptual reference & -- & 0 \\
-UIEB challenge-60 & No satisfactory reference & -- & 0 \\
-UIEB paired folder & Paired reference & -- & 0 \\
-EUVP paired folder & Paired reference & -- & 0 \\
-UODD & No reference, held out & -- & 0 \\
-Aquarium & Capture, not in the comparison & Train / valid / test & 448 / 127 / 63 \\
+UIEB raw & Model input & Train & 712 \\
+UIEB raw & Model input & Validation & 89 \\
+UIEB raw & Model input & Test & 89 \\
+reference-890 & Training and test target & -- & 890 \\
+challenge-60 & No reference, not scored & -- & 60 \\
+EUVP trainA & Raw only, not a paired test & -- & 1478 \\
 \hline
 \end{tabular}
 \end{table}
 
 \begin{table}[ht]
-\caption{Training configuration recorded from the runnable script. The checkpoint file is not present because training has not been run. Seed 2026 covers Python, NumPy, and PyTorch. The checkpoint rule keeps the epoch with the lowest mean validation loss at \texttt{runs/evaluated/checkpoint.pt}. The public repository is \url{https://github.com/fizzahsohail429/Underwater-Image-Enhanncement-and-Restoration}, remote commit \texttt{d219b49c81b9eb03932c9174c9f0be9695e8e737}. This working tree is not that commit.}
+\caption{Settings used by the completed run in \texttt{train\_uieb\_reference.py}. The manuscript learning rate of 0.001 produced non-finite gradients, so this run used 0.0001. The checkpoint is epoch 29 of \texttt{runs/uieb\_reference/checkpoints/best\_val\_psnr.pt}, chosen by the highest mean validation PSNR. The public repository is \url{https://github.com/fizzahsohail429/Underwater-images-restoration-v2}.}
 \begin{tabular}{ll}
 \hline
 Setting & Value \\
 \hline
 Input & $256\times256$, range $[-1,1]$ after $(u/255-0.5)/0.5$ \\
 Batch size / epochs & 6 / 30 \\
-Optimizer & AdamW, learning rate 0.001, weight decay 0.0001 \\
-Scheduler & ReduceLROnPlateau, factor 0.5, patience 5 \\
-Loss weights & L1 0.4, MSE 0.3, Sobel 0.2, consistency 0.1 \\
+Optimizer & AdamW, learning rate 0.0001, weight decay 0.0001 \\
+Scheduler & ReduceLROnPlateau, mode max, factor 0.5, patience 5 \\
+Loss weights & L1 0.4, MSE 0.3, Sobel 0.2, consistency 0.0 \\
 Seed & 2026 \\
 \hline
 \end{tabular}
 \end{table}
 
 \begin{table}[ht]
-\caption{Full-reference metric protocol. The UIEB test list contains 89 raw images. None can be scored until \texttt{reference-890} is available and a checkpoint has been trained, so the evaluated $n=0$ and the 95\% Student-$t$ interval is undefined. PSNR uses peak value 1 after denormalization to $[0,1]$. SSIM follows Wang et al.\ with an $11\times11$ Gaussian window, $\sigma=1.5$, and constants $(0.01)^2$ and $(0.03)^2$, averaged over RGB channels and then over images.}
-\begin{tabular}{lll}
+\caption{Full-reference scores on the locked 89-image test list. PSNR uses peak value 1 after denormalization to $[0,1]$. SSIM follows Wang et al.\ with an $11\times11$ Gaussian window, $\sigma=1.5$, and constants $(0.01)^2$ and $(0.03)^2$. The change is the mean paired difference from the unprocessed input.}
+\begin{tabular}{lrrrr}
 \hline
-Quantity & Rule & Sample count \\
+Method & Epoch & Test PSNR & Test SSIM & PSNR change \\
 \hline
-PSNR & Per-image MSE over C, H, W; then the mean of those scores & 0 \\
-SSIM & Per-image channel-averaged SSIM; then the mean over images & 0 \\
-UIQM, UCIQE & Not computed; reference implementations are not in this revision & 0 \\
-Uncertainty & $t_{n-1,0.975}\,s/\sqrt{n}$ only when $n\ge2$ & undefined \\
+Unprocessed input & -- & 17.874 & 0.7719 & 0 \\
+E-URM & 29 & 22.217 & 0.8825 & +4.342 \\
+No color correction & 30 & 22.212 & 0.8820 & +4.338 \\
+Capacity-matched & 29 & 20.915 & 0.8672 & +3.041 \\
+No attention & 30 & 20.748 & 0.8662 & +2.873 \\
 \hline
 \end{tabular}
 \end{table}
 
 \begin{table}[ht]
-\caption{Measured cost at $256\times256$, batch size 6, on CPU (Intel64 Family 6 Model 186, PyTorch 2.7.1, 10 threads). Latency is the mean of two timed evaluation forwards after one warmup. Peak memory is the process working set during the forward, including the loaded weights. External networks were not measured.}
+\caption{Forward-only cost of the untrained architectures at $256\times256$, batch size 6, on CPU. This is not a timing of the trained checkpoints. External networks were not measured.}
 \begin{tabular}{lrrrr}
 \hline
 Variant & Parameters & Peak memory (MiB) & Batch latency (ms) & Image latency (ms) \\
@@ -59,27 +58,6 @@ E-URM & 73{,}639{,}032 & 1792.65 & 7171.14 & 1195.19 \\
 No attention & 42{,}199{,}098 & 1362.74 & 4053.81 & 675.63 \\
 No color correction & 73{,}636{,}225 & 1789.38 & 6156.05 & 1026.01 \\
 Capacity-matched control & 76{,}747{,}715 & 1494.61 & 4397.24 & 732.87 \\
-Unprocessed input & 0 & -- & -- & -- \\
-Water-Net & -- & -- & -- & -- \\
-FUnIE-GAN & -- & -- & -- & -- \\
-PCAFA-Net & -- & -- & -- & -- \\
-\hline
-\end{tabular}
-\end{table}
-
-\begin{table}[ht]
-\caption{Baselines and ablations. The capacity-matched control replaces each multiscale attention block with one $3\times3$ convolution, batch normalization, and ReLU, and it removes color correction. Its parameter count is 1.042 times E-URM. None of the trained checkpoints exist yet.}
-\begin{tabular}{lll}
-\hline
-Variant & Change & Checkpoint \\
-\hline
-Unprocessed input & Output equals the input & none \\
-E-URM & Attention and color correction & runs/evaluated/checkpoint.pt, absent \\
-Capacity-matched control & $3\times3$ refinement, no color module & not trained \\
-No attention & Attention removed, color module kept & not trained \\
-No color correction & Color module removed & not trained \\
-No degradation consistency & Consistency weight set to 0 & not trained \\
-No synthetic augmentation & Clean image used as the training input & not trained \\
 \hline
 \end{tabular}
 \end{table}

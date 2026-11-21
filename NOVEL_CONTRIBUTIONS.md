@@ -1,5 +1,7 @@
 # Novel Contributions in Improved Underwater Image Restoration Algorithm
 
+The measured UIEB experiment, the selected checkpoint, and the test table are in README.md. This file describes design ideas in the model. It is not the result record.
+
 ## Overview
 
 This document outlines the 5 major novel contributions in our improved underwater image restoration algorithm that should outperform traditional U-Net and ResNet architectures. These contributions address specific challenges in underwater image restoration and provide significant improvements in restoration quality.

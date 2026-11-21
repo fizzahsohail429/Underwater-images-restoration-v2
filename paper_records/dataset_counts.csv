@@ -1,11 +1,11 @@
 source,reference_type,split,directory,directory_present,image_count,paired_count,sequence_count,role,in_current_comparison
-UIEB raw-890,raw underwater image,train,archive\raw-890,TRUE,712,0,712,"current comparison; still-image partition, seed 2026, ratios 0.8/0.1/0.1",TRUE
-UIEB raw-890,raw underwater image,validation,archive\raw-890,TRUE,89,0,89,"current comparison; still-image partition, seed 2026, ratios 0.8/0.1/0.1",TRUE
-UIEB raw-890,raw underwater image,test,archive\raw-890,TRUE,89,0,89,"current comparison; still-image partition, seed 2026, ratios 0.8/0.1/0.1",TRUE
-UIEB reference-890,perceptual reference,unsplit,archive\reference-890,FALSE,0,0,0,paired target for raw-890 when the files are present,FALSE
-UIEB challenge-60,no satisfactory reference,unsplit,archive\challenge-60,FALSE,0,0,0,visual and no-reference assessment when the files are present,FALSE
+UIEB raw,raw underwater image,train,archive\UIEB,TRUE,712,712,712,"locked split of archive/UIEB, seed 2026, ratios 0.8/0.1/0.1; each name has one reference-890 target",TRUE
+UIEB raw,raw underwater image,validation,archive\UIEB,TRUE,89,89,89,"locked split of archive/UIEB, seed 2026, ratios 0.8/0.1/0.1; each name has one reference-890 target",TRUE
+UIEB raw,raw underwater image,test,archive\UIEB,TRUE,89,89,89,"locked split of archive/UIEB, seed 2026, ratios 0.8/0.1/0.1; each name has one reference-890 target",TRUE
+UIEB reference-890,reference image,unsplit,archive\reference-890,TRUE,890,890,890,training and test target paired by filename stem,TRUE
+UIEB challenge-60,no reference,unsplit,archive\challenge-60,TRUE,60,0,60,present locally; no reference images and not scored,FALSE
 UIEB_paired,paired perceptual reference,unsplit,Underwater-Image-Enhanncement-and-Restoration-main\datasets\UIEB_paired,TRUE,0,0,0,prepared UIEB pairs,FALSE
-EUVP_paired,paired reference,unsplit,Underwater-Image-Enhanncement-and-Restoration-main\datasets\EUVP_paired,TRUE,0,0,0,"EUVP paired subset, kept separate from UIEB",FALSE
+EUVP_paired,raw images only,unsplit,archive\EUVP\Paired\underwater_dark\trainA,TRUE,1478,0,1478,"local raw images; trainB reference folder is absent, so this is not a paired external test",FALSE
 UODD_noref,no reference,unsplit,Underwater-Image-Enhanncement-and-Restoration-main\datasets\UODD_noref,TRUE,0,0,0,held-out no-reference source,FALSE
 UTDAC2020_noref,no reference,unsplit,Underwater-Image-Enhanncement-and-Restoration-main\datasets\UTDAC2020_noref,FALSE,0,0,0,supported no-reference source,FALSE
 RUOD_noref,no reference,unsplit,Underwater-Image-Enhanncement-and-Restoration-main\datasets\RUOD_noref,FALSE,0,0,0,supported no-reference source,FALSE

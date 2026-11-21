@@ -31,6 +31,8 @@ The completed run used Python 3.11.9, PyTorch 2.7.1+cpu, torchvision 0.22.1, and
 
 `train_uieb_reference.py` is the script for the E-URM numbers. `train_uieb_variants.py` repeats that protocol for one named variant and writes to `runs/uieb_variants/`. It does not modify `runs/uieb_reference/`.
 
+The nested folder `Underwater-Image-Enhanncement-and-Restoration-main` is an earlier copy. It is not the source of the UIEB reference-890 table. `paper_records/train_uieb_ablations.py` and `paper_records/train_three_sources.py` also train a different task: their target is a raw image after synthetic degradation. Use them only when that older task is the one being inspected. `shape_check()` in `train_three_sources.py` is the architecture check for E-URM.
+
 ## Dataset
 
 Pairing is by filename stem. The image folders stay on the local machine and are not in this Git repository.

@@ -18,7 +18,7 @@
   "scene_grouping": "Filenames do not contain a scene or sequence identifier, so grouped resampling was not applied.",
   "external_sources": {
     "challenge-60": {
-      "present": false
+      "present": true
     },
     "EUVP_paired": {
       "present": true,

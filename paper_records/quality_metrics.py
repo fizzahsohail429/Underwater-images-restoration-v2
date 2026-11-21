@@ -1,7 +1,8 @@
 """PSNR, SSIM, UIQM, and UCIQE used for the saved records.
 
-PSNR and SSIM compare a prediction with the original image after both have been
-mapped to [0, 1]. They are not scores against a separate reference-890 file.
+psnr_per_image and ssim_per_image compare the two tensors they are given after
+both have been mapped to [0, 1]. train_uieb_reference.py and
+train_uieb_variants.py pass the resized reference-890 image as the second tensor.
 
 UIQM follows Panetta, Gao, and Agaian (2016): UICM with 10% asymmetric
 alpha-trimming, UISM as the EME of Sobel magnitude, and UIConM as PLIP log-AMEE.

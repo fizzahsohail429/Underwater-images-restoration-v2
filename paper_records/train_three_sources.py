@@ -1,8 +1,9 @@
-"""Train and test E-URM on UIEB, EUVP, and the aquarium pretrain split.
+"""Shape check for E-URM, plus an older separate trainer.
 
-Each source is trained separately. PSNR and SSIM use the original image as the
-target after synthetic degradation. UIQM and UCIQE are computed on the output
-only. A model trained on one source is also scored on the other two test lists.
+The reported UIEB result is produced by train_uieb_reference.py. Running this
+file as a program trains a different task, with a synthetic degradation and the
+raw image as the target. Call shape_check() for the architecture record. Do not
+use this file's training loop for the reference-890 table.
 """
 
 import csv

@@ -187,6 +187,15 @@
     "local_git": false,
     "evaluated_revision": "Local working tree. The decoder-width fix and these records are not identified by a git commit in this folder, so they are not the remote commit above."
   },
+  "completed_uieb_reference_run": {
+    "status": "This file records the earlier intended settings. The completed run is runs/uieb_reference/uieb_experiment_config.json.",
+    "script": "train_uieb_reference.py",
+    "learning_rate_used": 0.0001,
+    "degradation_consistency_used": 0.0,
+    "scheduler_mode_used": "max",
+    "checkpoint": "runs/uieb_reference/checkpoints/best_val_psnr.pt",
+    "selection_rule": "highest mean validation PSNR"
+  },
   "hardware": {
     "platform": "Windows-10-10.0.26300-SP0",
     "processor": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
